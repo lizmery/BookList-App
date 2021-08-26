@@ -140,7 +140,7 @@ document.querySelector('.btn').addEventListener('click', (e) => {
 
     // Validate
     if(title === '' || author === '' || genre === '') {
-        UI.showAlert('Please fill in all fields', 'danger');
+        UI.showAlert('Please fill in all fields', 'primary');
     } else {
         const status = document.querySelector('input[type=radio][name=status]:checked').value;
 
@@ -155,7 +155,7 @@ document.querySelector('.btn').addEventListener('click', (e) => {
             Store.addBook(book);
 
             // Show success message
-            UI.showAlert('Book Added!', 'success');
+            UI.showAlert('Book Added!', 'secondary');
 
             // Clear fields
             UI.clearFields();
@@ -170,7 +170,7 @@ document.querySelector('.btn').addEventListener('click', (e) => {
             Store.addBook(book);
 
             // Show success message
-            UI.showAlert('Book Added!', 'success');
+            UI.showAlert('Book Added!', 'secondary');
 
             // Clear fields
             UI.clearFields();
@@ -187,7 +187,7 @@ function deleteReadRow(i, title) {
     Store.removeBook(title);
 
     // Show success message
-    UI.showAlert('Book Removed', 'warning');
+    UI.showAlert('Book Removed', 'danger');
 }
 
 // Function: Remove Book from Unread List
@@ -199,7 +199,7 @@ function deleteUnreadRow(i, title) {
     Store.removeBook(title);
 
     // Show success message
-    UI.showAlert('Book Removed', 'warning');
+    UI.showAlert('Book Removed', 'danger');
 }
 
 // Function: Move Unread Book to Read (Completed) Book Table
@@ -218,5 +218,5 @@ function moveUnreadToRead(i, title, author, genre, rating, comments, status) {
     Store.addBook(book);
 
     // Show success message
-    UI.showAlert('Book Completed!', 'primary');
+    UI.showAlert('Book Completed!', 'success');
 }
